@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 enum SNAKE_FACING {
     case Up
@@ -33,6 +34,12 @@ class GameScene: SKScene {
     var snakeBits:[SKSpriteNode] = []
     var applePosition = CGPoint(x: 0, y: 0)
     var snakeDirection = SNAKE_FACING.Right
+    
+    // SOUNDS!
+    var appleSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("APPLE", ofType: "wav")!)
+    var applePlayer = AVAudioPlayer()
+    var dieSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("DIE", ofType: "wav")!)
+    var diePlayer = AVAudioPlayer()
     
     // THE GAME!
     var scoreLabel = SKLabelNode()
@@ -168,7 +175,7 @@ class GameScene: SKScene {
         
         if (newPos.x == applePosition.x && newPos.y == applePosition.y) {
             score++
-            SKAction.playSoundFileNamed("APPLE.wav", waitForCompletion: false)
+            applePlayer.play()
             scoreLabel.text = "SCORE: \(score)"
             for child in self.children {
                 if child.name == "appleBit" {
@@ -255,6 +262,20 @@ class GameScene: SKScene {
         self.childNodeWithName("restartLabel")?.removeFromParent()
         self.addChild(restartLabel)
         restartLabel.hidden = true
+        
+        do {
+            applePlayer = try AVAudioPlayer(contentsOfURL: appleSound)
+        } catch {
+            print("No sound found by URL:\(appleSound)")
+        }
+        applePlayer.prepareToPlay()
+        
+        do {
+            diePlayer = try AVAudioPlayer(contentsOfURL: dieSound)
+        } catch {
+            print("No sound found by URL:\(dieSound)")
+        }
+        diePlayer.prepareToPlay()
     }
     
     override func update(currentTime: CFTimeInterval) {
@@ -313,7 +334,7 @@ class GameScene: SKScene {
     }
     
     func gameover() {
-        SKAction.playSoundFileNamed("DIE.wav", waitForCompletion: false)
+        diePlayer.play()
         self.paused = true
         gameoverLabel.hidden = false
         restartLabel.hidden = false

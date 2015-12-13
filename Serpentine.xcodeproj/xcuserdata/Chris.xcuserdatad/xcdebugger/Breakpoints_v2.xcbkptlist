@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Serpentine/GameScene.swift"
-            timestampString = "471734960.566343"
+            timestampString = "471738065.133168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "checkCollision(_:)"
             landmarkType = "5">
          </BreakpointContent>
