@@ -168,6 +168,7 @@ class GameScene: SKScene {
         
         if (newPos.x == applePosition.x && newPos.y == applePosition.y) {
             score++
+            SKAction.playSoundFileNamed("APPLE.wav", waitForCompletion: false)
             scoreLabel.text = "SCORE: \(score)"
             for child in self.children {
                 if child.name == "appleBit" {
@@ -312,6 +313,7 @@ class GameScene: SKScene {
     }
     
     func gameover() {
+        SKAction.playSoundFileNamed("DIE.wav", waitForCompletion: false)
         self.paused = true
         gameoverLabel.hidden = false
         restartLabel.hidden = false
