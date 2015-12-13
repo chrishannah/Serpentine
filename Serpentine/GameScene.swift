@@ -229,9 +229,6 @@ class GameScene: SKScene {
             if let characters = event.characters{
                 for character in characters.characters{
                     switch(character){
-                    case "w":
-                        moveSnake(true)
-                        break
                     case "r":
                         restartGame()
                         break
