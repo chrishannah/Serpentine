@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         /* Pick a size for the scene */
-        if let scene = GameScene(fileNamed:"GameScene") {
+        if let scene = TitleScene(fileNamed:"TitleScene") {
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
             
@@ -29,6 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             self.skView!.showsFPS = false
             self.skView!.showsNodeCount = false
+    
         }
     }
     

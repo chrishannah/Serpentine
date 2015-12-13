@@ -12,6 +12,8 @@
 		83384FC21C1D0AEE00DF9C13 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 83384FC11C1D0AEE00DF9C13 /* GameScene.sks */; };
 		83384FC41C1D0AEE00DF9C13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83384FC31C1D0AEE00DF9C13 /* Assets.xcassets */; };
 		83384FC71C1D0AEE00DF9C13 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83384FC51C1D0AEE00DF9C13 /* MainMenu.xib */; };
+		837D0E191C1E297800537A0F /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 837D0E181C1E297800537A0F /* TitleScene.sks */; };
+		837D0E1B1C1E29D300537A0F /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837D0E1A1C1E29D300537A0F /* TitleScene.swift */; };
 		83D0D7111C1E24B0007B42AB /* DIE.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83D0D70F1C1E24B0007B42AB /* DIE.wav */; };
 		83D0D7121C1E24B0007B42AB /* APPLE.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83D0D7101C1E24B0007B42AB /* APPLE.wav */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,8 @@
 		83384FC31C1D0AEE00DF9C13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83384FC61C1D0AEE00DF9C13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		83384FC81C1D0AEE00DF9C13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		837D0E181C1E297800537A0F /* TitleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScene.sks; sourceTree = "<group>"; };
+		837D0E1A1C1E29D300537A0F /* TitleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
 		83D0D70F1C1E24B0007B42AB /* DIE.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = DIE.wav; sourceTree = "<group>"; };
 		83D0D7101C1E24B0007B42AB /* APPLE.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = APPLE.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,7 +64,9 @@
 			children = (
 				83384FBD1C1D0AEE00DF9C13 /* AppDelegate.swift */,
 				83384FBF1C1D0AEE00DF9C13 /* GameScene.swift */,
+				837D0E1A1C1E29D300537A0F /* TitleScene.swift */,
 				83384FC11C1D0AEE00DF9C13 /* GameScene.sks */,
+				837D0E181C1E297800537A0F /* TitleScene.sks */,
 				83384FC31C1D0AEE00DF9C13 /* Assets.xcassets */,
 				83384FC51C1D0AEE00DF9C13 /* MainMenu.xib */,
 				83384FC81C1D0AEE00DF9C13 /* Info.plist */,
@@ -133,6 +139,7 @@
 				83384FC21C1D0AEE00DF9C13 /* GameScene.sks in Resources */,
 				83D0D7121C1E24B0007B42AB /* APPLE.wav in Resources */,
 				83384FC71C1D0AEE00DF9C13 /* MainMenu.xib in Resources */,
+				837D0E191C1E297800537A0F /* TitleScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +152,7 @@
 			files = (
 				83384FC01C1D0AEE00DF9C13 /* GameScene.swift in Sources */,
 				83384FBE1C1D0AEE00DF9C13 /* AppDelegate.swift in Sources */,
+				837D0E1B1C1E29D300537A0F /* TitleScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

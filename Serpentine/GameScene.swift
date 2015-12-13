@@ -233,7 +233,7 @@ class GameScene: SKScene {
                         restartGame()
                         break
                     default:
-                        print(character)
+                        break
                     }
                 }
             }
