@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Serpentine-TV.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Serpentine.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>83384FB91C1D0AEE00DF9C13</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>83FD673B1C1F90BB0096CF24</key>
 		<dict>
 			<key>primary</key>
 			<true/>

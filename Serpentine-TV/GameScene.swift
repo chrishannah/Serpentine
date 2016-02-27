@@ -1,8 +1,8 @@
 //
 //  GameScene.swift
-//  Serpentine
+//  Serpentine-TV
 //
-//  Created by Christopher Hannah on 13/12/2015.
+//  Created by Christopher Hannah on 15/12/2015.
 //  Copyright (c) 2015 Christopher Hannah. All rights reserved.
 //
 
@@ -19,18 +19,24 @@ enum SNAKE_FACING {
 class GameScene: SKScene {
     
     // CONSTANTS!
-    let bitSize = CGSize(width: 16, height: 16)
-    let bgColor = NSColor(calibratedRed: (1/255)*154, green: (1/255)*217, blue: (1/255)*154, alpha: 1)
-    let appleColor = NSColor.whiteColor()
-    let snakeColor = NSColor(calibratedRed: (1/255)*31, green: (1/255)*43, blue: (1/255)*31, alpha: 1)
-    let textColor = NSColor(calibratedRed: (1/255)*91, green: (1/255)*127, blue: (1/255)*91, alpha: 1)
+    let bitSize = CGSize(width: 30, height: 30)
+    let bgColor = UIColor(red: (1/255)*154, green: (1/255)*217, blue: (1/255)*154, alpha: 1)
+    let appleColor = UIColor.whiteColor()
+    let snakeColor = UIColor(red: (1/255)*31, green: (1/255)*43, blue: (1/255)*31, alpha: 1)
+    let textColor = UIColor(red: (1/255)*91, green: (1/255)*127, blue: (1/255)*91, alpha: 1)
+    
+    // SCREEN SIZE
+    var midX:CGFloat = 0
+    var midY:CGFloat = 0
+    var maxX:CGFloat = 0
+    var maxY:CGFloat = 0
     
     // TIMING!
     var timeElapsed = 0
     
     
     // THE SNAKE!
-    var snakeBitPositions:[CGPoint] = [CGPoint(x: 16, y: 16), CGPoint(x: 15, y: 16), CGPoint(x: 14, y: 16)]
+    var snakeBitPositions:[CGPoint] = []
     var snakeBits:[SKSpriteNode] = []
     var applePosition = CGPoint(x: 0, y: 0)
     var snakeDirection = SNAKE_FACING.Right
@@ -53,8 +59,8 @@ class GameScene: SKScene {
     
     
     func calculatePosition(bitPos: CGPoint) -> CGPoint {
-        let x = ((bitPos.x-1) * bitSize.width) + 8
-        let y = ((bitPos.y-1) * bitSize.height) + 8
+        let x = ((bitPos.x-1) * bitSize.width) + (bitSize.width / 2)
+        let y = ((bitPos.y-1) * bitSize.height) + (bitSize.height / 2)
         return CGPoint(x: x, y: y)
     }
     
@@ -63,7 +69,7 @@ class GameScene: SKScene {
         if (snakeBits.count == snakeBitPositions.count) {
             
             for (var i = 0; i < snakeBits.count; i++) {
-               snakeBits[i].position = calculatePosition(snakeBitPositions[i])
+                snakeBits[i].position = calculatePosition(snakeBitPositions[i])
                 
             }
             
@@ -80,7 +86,7 @@ class GameScene: SKScene {
             
         }
         
-
+        
     }
     
     func moveSnake(grow: Bool) {
@@ -107,7 +113,7 @@ class GameScene: SKScene {
             newPos.x--
             break
         }
-
+        
         
         if (checkCollision(CGPoint(x: newPos.x, y: newPos.y)) == false) {
             snakeBitPositions[0] = newPos
@@ -175,7 +181,7 @@ class GameScene: SKScene {
             ateApple()
         }
         
-        if (newPos.x == 0 || newPos.y == 0 || newPos.x == 33 || newPos.y == 33) {
+        if (newPos.x == 0 || newPos.y == 0 || newPos.x > maxX || newPos.y >= maxY) {
             collision = true
         }
         
@@ -198,57 +204,75 @@ class GameScene: SKScene {
         apples = false
     }
     
-    override func keyDown(theEvent: NSEvent) {
-        handleKeyEvent(theEvent, keyDown: true)
+    func swipedRight(sender: UISwipeGestureRecognizer) {
+        moveRight()
     }
     
-    override func keyUp(theEvent: NSEvent) {
-        handleKeyEvent(theEvent, keyDown: false)
+    func swipedLeft(sender: UISwipeGestureRecognizer) {
+        moveLeft()
     }
     
-    func handleKeyEvent(event:NSEvent, keyDown:Bool){
-        if event.modifierFlags.contains(NSEventModifierFlags.NumericPadKeyMask){
-            if let theArrow = event.charactersIgnoringModifiers, keyChar = theArrow.unicodeScalars.first?.value{
-                switch Int(keyChar){
-                case NSUpArrowFunctionKey:
-                    changeDirection(.Up)
-                    updateSnake()
-                    break
-                case NSDownArrowFunctionKey:
-                    changeDirection(.Down)
-                    updateSnake()
-                    break
-                case NSRightArrowFunctionKey:
-                    changeDirection(.Right)
-                    updateSnake()
-                    break
-                case NSLeftArrowFunctionKey:
-                    changeDirection(.Left)
-                    updateSnake()
-                    break
-                default:
-                    break
-                }
-            }
-        } else {
-            if let characters = event.characters{
-                for character in characters.characters{
-                    switch(character){
-                    case "r":
-                        restartGame()
-                        break
-                    default:
-                        break
-                    }
-                }
-            }
-        }
+    func swipedUp(sender: UISwipeGestureRecognizer) {
+        moveUp()
     }
     
+    func swipedDown(sender: UISwipeGestureRecognizer) {
+        moveDown()
+    }
+    
+    func moveLeft() {
+        changeDirection(.Left)
+        updateSnake()
+    }
+    
+    func moveRight() {
+        changeDirection(.Right)
+        updateSnake()
+    }
+    
+    func moveUp() {
+        changeDirection(.Up)
+        updateSnake()
+    }
+    
+    func moveDown() {
+        changeDirection(.Down)
+        updateSnake()
+    }
 
     
     
     override func didMoveToView(view: SKView) {
+        
+        // Register Swipe Events
+        let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedRight:"))
+        swipeRight.direction = .Right
+        view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedLeft:"))
+        swipeLeft.direction = .Left
+        view.addGestureRecognizer(swipeLeft)
+        
+        let swipeUp:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedUp:"))
+        swipeUp.direction = .Up
+        view.addGestureRecognizer(swipeUp)
+        
+        let swipeDown:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedDown:"))
+        swipeDown.direction = .Down
+        view.addGestureRecognizer(swipeDown)
+        
+        var width:CGFloat = 1920
+        var height:CGFloat = 1080
+        width = self.size.width
+        height = self.size.height
+        print("View Bounds: \(view.bounds)")
+        print("Scene Size: \(self.size)")
+        midX = (width/bitSize.width)/2
+        midY = (height/bitSize.height)/2
+        midX = CGFloat(Int(midX))
+        midY = CGFloat(Int(midY))
+        maxX = (width/bitSize.width)
+        maxY = (height/bitSize.height)
         
         highscore = loadHighscore()
         
@@ -263,7 +287,7 @@ class GameScene: SKScene {
         self.childNodeWithName("highscoreLabel")?.removeFromParent()
         self.addChild(highscoreLabel)
         gameoverLabel = self.childNodeWithName("gameoverLabel") as! SKLabelNode
-        gameoverLabel.fontColor = NSColor.whiteColor()
+        gameoverLabel.fontColor = UIColor.whiteColor()
         self.childNodeWithName("gameoverLabel")?.removeFromParent()
         self.addChild(gameoverLabel)
         gameoverLabel.hidden = true
@@ -286,6 +310,8 @@ class GameScene: SKScene {
             print("No sound found by URL:\(dieSound)")
         }
         diePlayer.prepareToPlay()
+        
+        restartGame()
     }
     
     override func update(currentTime: CFTimeInterval) {
@@ -302,7 +328,7 @@ class GameScene: SKScene {
             moveSnake(true)
             shouldGrow = false
         } else {
-                moveSnake(false)
+            moveSnake(false)
         }
         updateSnake()
         generateApple()
@@ -310,7 +336,7 @@ class GameScene: SKScene {
     
     func restartGame() {
         score = 0
-        snakeBitPositions = [CGPoint(x: 16, y: 16), CGPoint(x: 15, y: 16), CGPoint(x: 14, y: 16)]
+        snakeBitPositions = [CGPoint(x: midX, y: midY), CGPoint(x: midX-1, y: midY), CGPoint(x: midX-3, y: midY)]
         snakeBits = []
         snakeDirection = SNAKE_FACING.Right
         apples = false
@@ -329,6 +355,8 @@ class GameScene: SKScene {
         
         scoreLabel.text = "SCORE: 0"
         highscoreLabel.text = "HIGH: \(highscore)"
+        scoreLabel.position.y = scoreLabel.frame.height / 2
+        highscoreLabel.position.y = highscoreLabel.frame.height / 2
         gameoverLabel.hidden = true
         restartLabel.hidden = true
     }
@@ -345,8 +373,8 @@ class GameScene: SKScene {
     }
     
     func generateRandomPoint(excluding excludedPoints: [CGPoint]) -> CGPoint {
-        let x = randomInt(1, max: 32)
-        let y = randomInt(1, max: 32)
+        let x = randomInt(1, max: Int(maxX))
+        let y = randomInt(1, max: Int(maxY))
         let point = CGPoint(x: x, y: y)
         var pointAcceptable = true
         
@@ -392,7 +420,7 @@ class GameScene: SKScene {
     
     func loadHighscore() -> Int {
         var hScore = 0
-    
+        
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.synchronize()
         hScore = defaults.integerForKey("serpentineHighscore")
@@ -405,5 +433,10 @@ class GameScene: SKScene {
         defaults.setInteger(hScore, forKey: "serpentineHighscore")
         defaults.synchronize()
     }
-
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if (self.paused) {
+            restartGame()
+        }
+    }
 }

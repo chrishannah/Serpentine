@@ -16,6 +16,17 @@
 		837D0E1B1C1E29D300537A0F /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837D0E1A1C1E29D300537A0F /* TitleScene.swift */; };
 		83D0D7111C1E24B0007B42AB /* DIE.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83D0D70F1C1E24B0007B42AB /* DIE.wav */; };
 		83D0D7121C1E24B0007B42AB /* APPLE.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83D0D7101C1E24B0007B42AB /* APPLE.wav */; };
+		83FD673F1C1F90BB0096CF24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD673E1C1F90BB0096CF24 /* AppDelegate.swift */; };
+		83FD67411C1F90BB0096CF24 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 83FD67401C1F90BB0096CF24 /* GameScene.sks */; };
+		83FD67431C1F90BB0096CF24 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD67421C1F90BB0096CF24 /* GameScene.swift */; };
+		83FD67451C1F90BB0096CF24 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD67441C1F90BB0096CF24 /* GameViewController.swift */; };
+		83FD67471C1F90BB0096CF24 /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83FD67461C1F90BB0096CF24 /* Game.xcassets */; };
+		83FD674A1C1F90BB0096CF24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FD67481C1F90BB0096CF24 /* Main.storyboard */; };
+		83FD674C1C1F90BC0096CF24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83FD674B1C1F90BC0096CF24 /* Assets.xcassets */; };
+		83FD67521C1F91030096CF24 /* TVTitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD67511C1F91030096CF24 /* TVTitleScreen.swift */; };
+		83FD67581C1F91710096CF24 /* TVTitleScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = 83FD67571C1F91710096CF24 /* TVTitleScreen.sks */; };
+		83FD67591C1F9B290096CF24 /* DIE.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83D0D70F1C1E24B0007B42AB /* DIE.wav */; };
+		83FD675A1C1F9B290096CF24 /* APPLE.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83D0D7101C1E24B0007B42AB /* APPLE.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +41,29 @@
 		837D0E1A1C1E29D300537A0F /* TitleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
 		83D0D70F1C1E24B0007B42AB /* DIE.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = DIE.wav; sourceTree = "<group>"; };
 		83D0D7101C1E24B0007B42AB /* APPLE.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = APPLE.wav; sourceTree = "<group>"; };
+		83FD67371C1F90670096CF24 /* Serpentine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Serpentine.entitlements; sourceTree = "<group>"; };
+		83FD673C1C1F90BB0096CF24 /* Serpentine-TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Serpentine-TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83FD673E1C1F90BB0096CF24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		83FD67401C1F90BB0096CF24 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		83FD67421C1F90BB0096CF24 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		83FD67441C1F90BB0096CF24 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		83FD67461C1F90BB0096CF24 /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Game.xcassets; sourceTree = "<group>"; };
+		83FD67491C1F90BB0096CF24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		83FD674B1C1F90BC0096CF24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		83FD674D1C1F90BC0096CF24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83FD67511C1F91030096CF24 /* TVTitleScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVTitleScreen.swift; sourceTree = "<group>"; };
+		83FD67571C1F91710096CF24 /* TVTitleScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = TVTitleScreen.sks; path = ../TVTitleScreen.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		83384FB71C1D0AEE00DF9C13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83FD67391C1F90BB0096CF24 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				83384FBC1C1D0AEE00DF9C13 /* Serpentine */,
+				83FD673D1C1F90BB0096CF24 /* Serpentine-TV */,
 				83384FBB1C1D0AEE00DF9C13 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				83384FBA1C1D0AEE00DF9C13 /* Serpentine.app */,
+				83FD673C1C1F90BB0096CF24 /* Serpentine-TV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +94,7 @@
 		83384FBC1C1D0AEE00DF9C13 /* Serpentine */ = {
 			isa = PBXGroup;
 			children = (
+				83FD67371C1F90670096CF24 /* Serpentine.entitlements */,
 				83384FBD1C1D0AEE00DF9C13 /* AppDelegate.swift */,
 				83384FBF1C1D0AEE00DF9C13 /* GameScene.swift */,
 				837D0E1A1C1E29D300537A0F /* TitleScene.swift */,
@@ -74,6 +107,23 @@
 				83D0D7101C1E24B0007B42AB /* APPLE.wav */,
 			);
 			path = Serpentine;
+			sourceTree = "<group>";
+		};
+		83FD673D1C1F90BB0096CF24 /* Serpentine-TV */ = {
+			isa = PBXGroup;
+			children = (
+				83FD673E1C1F90BB0096CF24 /* AppDelegate.swift */,
+				83FD67401C1F90BB0096CF24 /* GameScene.sks */,
+				83FD67421C1F90BB0096CF24 /* GameScene.swift */,
+				83FD67441C1F90BB0096CF24 /* GameViewController.swift */,
+				83FD67571C1F91710096CF24 /* TVTitleScreen.sks */,
+				83FD67511C1F91030096CF24 /* TVTitleScreen.swift */,
+				83FD67461C1F90BB0096CF24 /* Game.xcassets */,
+				83FD67481C1F90BB0096CF24 /* Main.storyboard */,
+				83FD674B1C1F90BC0096CF24 /* Assets.xcassets */,
+				83FD674D1C1F90BC0096CF24 /* Info.plist */,
+			);
+			path = "Serpentine-TV";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +146,23 @@
 			productReference = 83384FBA1C1D0AEE00DF9C13 /* Serpentine.app */;
 			productType = "com.apple.product-type.application";
 		};
+		83FD673B1C1F90BB0096CF24 /* Serpentine-TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83FD674E1C1F90BC0096CF24 /* Build configuration list for PBXNativeTarget "Serpentine-TV" */;
+			buildPhases = (
+				83FD67381C1F90BB0096CF24 /* Sources */,
+				83FD67391C1F90BB0096CF24 /* Frameworks */,
+				83FD673A1C1F90BB0096CF24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Serpentine-TV";
+			productName = "Serpentine-TV";
+			productReference = 83FD673C1C1F90BB0096CF24 /* Serpentine-TV.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -108,6 +175,16 @@
 				TargetAttributes = {
 					83384FB91C1D0AEE00DF9C13 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 35H8Q2N6J9;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					83FD673B1C1F90BB0096CF24 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 35H8Q2N6J9;
 					};
 				};
 			};
@@ -125,6 +202,7 @@
 			projectRoot = "";
 			targets = (
 				83384FB91C1D0AEE00DF9C13 /* Serpentine */,
+				83FD673B1C1F90BB0096CF24 /* Serpentine-TV */,
 			);
 		};
 /* End PBXProject section */
@@ -143,6 +221,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		83FD673A1C1F90BB0096CF24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83FD67591C1F9B290096CF24 /* DIE.wav in Resources */,
+				83FD675A1C1F9B290096CF24 /* APPLE.wav in Resources */,
+				83FD67581C1F91710096CF24 /* TVTitleScreen.sks in Resources */,
+				83FD674A1C1F90BB0096CF24 /* Main.storyboard in Resources */,
+				83FD67411C1F90BB0096CF24 /* GameScene.sks in Resources */,
+				83FD674C1C1F90BC0096CF24 /* Assets.xcassets in Resources */,
+				83FD67471C1F90BB0096CF24 /* Game.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -156,6 +248,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		83FD67381C1F90BB0096CF24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83FD67431C1F90BB0096CF24 /* GameScene.swift in Sources */,
+				83FD67451C1F90BB0096CF24 /* GameViewController.swift in Sources */,
+				83FD67521C1F91030096CF24 /* TVTitleScreen.swift in Sources */,
+				83FD673F1C1F90BB0096CF24 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -165,6 +268,14 @@
 				83384FC61C1D0AEE00DF9C13 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		83FD67481C1F90BB0096CF24 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83FD67491C1F90BB0096CF24 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -254,11 +365,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Serpentine/Serpentine.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Serpentine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Christopher-Hannah.Serpentine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -266,11 +382,47 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Serpentine/Serpentine.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Serpentine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Christopher-Hannah.Serpentine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		83FD674F1C1F90BC0096CF24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Serpentine-TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Christopher-Hannah.Serpentine-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		83FD67501C1F90BC0096CF24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Serpentine-TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Christopher-Hannah.Serpentine-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -294,6 +446,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		83FD674E1C1F90BC0096CF24 /* Build configuration list for PBXNativeTarget "Serpentine-TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83FD674F1C1F90BC0096CF24 /* Debug */,
+				83FD67501C1F90BC0096CF24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
